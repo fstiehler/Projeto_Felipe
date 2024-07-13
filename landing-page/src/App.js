@@ -1,8 +1,10 @@
+import React, { useState } from 'react';
+import Hero from "./components/hero/hero"
 
 function App() {
   return (
     <div className="App">
-      
+    <Hero />
     </div>
   );
 }
