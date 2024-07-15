@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Hero from "./components/hero/hero"
+import React from 'react';
+import Hero from './components/Hero';
 
 function App() {
   return (
