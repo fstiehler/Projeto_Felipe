@@ -1,0 +1,128 @@
+.home-section17 {
+  gap: var(--dl-space-space-fiveunits);
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  flex-direction: column;
+  justify-content: center;
+  background-color: #287a76;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.home-content5 {
+  width: 100%;
+  display: flex;
+  position: relative;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.home-header13 {
+  gap: var(--dl-space-space-threeunits);
+  width: 60%;
+  display: flex;
+  max-width: 600px;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 120px;
+  justify-content: center;
+  /* Centralizar horizontalmente */
+  margin: 0 auto;
+}
+.home-heading16 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 40px;
+}
+.home-buttons2 {
+  gap: var(--dl-space-space-unit);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.home-text37 {
+  color: #ffffff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.button-action {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.button-action:hover {
+  color: black;
+}
+
+@media (min-width: 992px) and (max-width: 1460px) {
+  .home-heading16 {
+    font-size: 40px;
+    width: 100%;
+  }
+  .home-buttons2 {
+  width: 100%;
+  }
+  .button-action {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-section17 {
+    padding-top: var(--dl-space-space-fourunits);
+    margin-top: 30%;
+  }
+  .home-heading16 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    width: 100%;
+  }
+  .home-header13 {
+    padding-bottom: var(--dl-space-space-fiveunits);
+    margin-left: 0%;
+    width: 100%;
+  }
+  .home-buttons2 {
+    flex-direction: column;
+    width: 100%;
+  }
+  .button-action {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 800;
+    line-height: 24px;
+  }
+  .home-heading13 {
+    margin-left: 0%;
+    width: 100%;
+  }
+ 
+}
+
+@media (min-width: 321px) and (max-width: 390px) {
+ 
+}
