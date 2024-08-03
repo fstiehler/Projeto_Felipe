@@ -1,11 +1,21 @@
-import React from 'react';
+import React from "react";
+import "./Hero.css"
+import NavBar from "./NavBar";
+import Carousel from "./Carousel";
+import Campaing from "./Campaing";
 
-function Hero() {
+
+export default function Hero() {
+
+
   return (
-    <div className="Hero">
-    
+    <div className="tudo">
+      <div className="navigation">
+        <NavBar />
+      </div>
+      <Carousel />
+      <Campaing />
     </div>
   );
 }
 
-export default Hero;

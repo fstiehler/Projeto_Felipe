@@ -1,0 +1,127 @@
+.navbar-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar-desktop-navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    color: #ffffff;
+    background-color: #1b3a4e;
+}
+
+.navbar-centered {
+    width: 67%;
+    height: 8vh;
+    display: flex;
+    box-sizing: initial;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-logo1 {
+    width: 125px;
+    margin-left: 40px;
+}
+
+.navbar-button {
+    font-weight: 800;
+    padding: 15px;
+    border-radius: 15px;
+    margin-left: -50px;
+    background-color: #000000;
+}
+
+.navbar-button:hover {
+    background-color: #08213f;
+}
+
+.navbar-nav-links {
+    display: flex;
+    gap: 55px;
+  }
+  
+  .navbar-nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav-link:hover {
+    color: #cccccc;
+  }
+
+ .navbar-button:hover {
+    background-color: #08213f;
+}
+
+
+@media (max-width: 991px) {
+    .navbar-centered {
+        height: 60px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .navbar-logo1 {
+        width: 64px;
+        margin-left: -10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-menu {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-desktop-navigation {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .navbar-centered {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .navbar-logo1 {
+        width: 84px;
+    }
+}
+
+@media (min-width: 420px) and (max-width: 428px) {
+    .navbar-menu {
+        padding-top: 15px;
+        padding-left: 0;
+        padding-right: 10px;
+    }
+
+    .navbar-logo1 {
+        width: 120px;
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 391px) and (max-width: 414px) {
+    .navbar-menu {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-logo1 {
+        width: 100px;
+        margin-left: 20px;
+    }
+}

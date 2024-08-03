@@ -1,0 +1,222 @@
+.hero-campaign {
+  width: 100%;
+  height: 10vh;
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-campaign-div-logo {
+  height: 50px;
+  display: flex;
+}
+
+.hero-campaign-text-top {
+  color: #dadada;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  font-family: 'Inter';
+}
+
+.hero-campaign-text-bottom {
+  color: #ffffff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  font-family: 'Inter';
+}
+
+.hero-campaign-div-buttom {
+  background-color: #0a6b66;
+  color: #ffffff;
+  padding: 14px 28px;
+  font-weight: 700;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.hero-campaign-div-text {
+  flex-direction: column;
+  padding: 90px;
+}
+
+@media (min-width: 992px) and (max-width: 1460px) {
+
+  .hero-campaign-div-buttom {
+    background-color: #065f5a;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-weight: 700;
+    border-radius: 15px;
+    font-size: 18px;
+  }
+
+  .hero-campaign-text-bottom {
+    color: #ffffff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .hero-campaign-div-logo {
+    height: auto;
+    display: flex;
+  }
+
+}
+
+@media (max-width: 991px) {
+  .hero-campaign-div-text {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-campaign-div-text {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 428px) {
+
+  .hero-campaign-div-logo {
+    display: flex;
+    height: auto;
+  }
+ .hero-campaign-text-top {
+    color: #dadada;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+  }
+  .hero-campaign-text-bottom {
+    color: #ffff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+  } 
+  .hero-campaign-div-buttom {
+    background-color: #075f5a;
+    font-size: 14px;
+    color: #f2f2f2;
+    padding: 10px 10px 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 391px)  and (max-width: 414px) {
+
+  .hero-campaign-div-logo {
+    display: flex;
+    height: auto
+  }
+  .hero-campaign-text-top {
+    color: #dadada;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+  }
+  .hero-campaign-text-bottom {
+    color: #ffff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+  }
+  .hero-campaign-div-buttom {
+    background-color: #075f5a;
+    font-size: 14px;
+    color: #f2f2f2;
+    padding: 10px 10px 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+}
+
+@media (min-width: 370px) and (max-width: 390px) {
+
+  .hero-campaign {
+    width: 100%;
+    height: 16vh;
+  }
+
+  .hero-campaign-div-logo {
+    display: flex;
+    height: auto
+  }
+  .hero-campaign-text-top {
+    color: #dadada;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 0%;
+  }
+  .hero-campaign-text-bottom {
+    color: #ffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+  }
+  .hero-campaign-div-buttom {
+    background-color: #075f5a;
+    font-size: 12px;
+    color: #f2f2f2;
+    padding: 10px 10px 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+}
+
+@media (max-width: 369px) {
+  .hero-campaign {
+    width: 100%;
+    height: 20vh;
+  }
+  .hero-campaign-div-logo {
+    display: flex;
+    height: auto
+  }
+  .hero-campaign-text-top {
+    color: #dadada;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 0%;
+  }
+  .hero-campaign-text-bottom {
+    color: #ffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+  }
+  .hero-campaign-div-buttom {
+    background-color: #075f5a;
+    font-size: 12px;
+    color: #f2f2f2;
+    padding: 10px 10px 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+  }
+}

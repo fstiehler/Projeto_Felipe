@@ -1,7 +1,7 @@
-import './Footer.css'
+import './Footer.css';
 import { Alert } from "antd";
 import { useState } from "react";
-import Logo from "../images/logos/evoluinfo.png"
+import Logo from "../images/logos/evoluinfo.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,7 +25,7 @@ export default function Footer() {
           showIcon
           closable
           onClose={closeAlert}
-          style={{ position: "fixed", top: 16, right: 16, zIndex: 9999 }}
+          style={{ position: "fixed", top: 16, right: 16 }}
         />
       );
 
@@ -47,7 +47,7 @@ export default function Footer() {
               showIcon
               closable
               onClose={closeAlert}
-              style={{ position: "fixed", top: 16, right: 16, zIndex: 9999 }}
+              style={{ position: "fixed", top: 16, right: 16 }}
             />
           );
         } else {
@@ -59,7 +59,7 @@ export default function Footer() {
               showIcon
               closable
               onClose={closeAlert}
-              style={{ position: "fixed", top: 16, right: 16, zIndex: 9999 }}
+              style={{ position: "fixed", top: 16, right: 16 }}
             />
           );
         }
@@ -73,7 +73,7 @@ export default function Footer() {
           showIcon
           closable
           onClose={closeAlert}
-          style={{ position: "fixed", top: 16, right: 16, zIndex: 9999 }}
+          style={{ position: "fixed", top: 16, right: 16 }}
         />
       );
     }
@@ -149,5 +149,5 @@ export default function Footer() {
         <span className="home-text138">Copyright © Fillipi Villani - {currentYear}</span>
       </div>
     </footer>
-  )
+  );
 }

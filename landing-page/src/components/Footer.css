@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding-top: var(--dl-space-space-sevenunits);
+  padding-top: 10%;
   padding-left: var(--dl-space-space-sevenunits);
   padding-right: var(--dl-space-space-sevenunits);
   flex-direction: column;
@@ -239,7 +239,7 @@
   flex-direction: column;
 }
 .home-branding {
-  width: var(--dl-size-size-large);
+  width: 20%;
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(95%) contrast(100%);;
   margin-bottom: var(--dl-space-space-unit);
 }

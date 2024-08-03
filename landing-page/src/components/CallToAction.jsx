@@ -7,7 +7,7 @@ export default function CallToAction() {
         <header className="home-header13">
           <h2 className="home-heading16">
             Tem dúvidas de como a Evoluinfo Tecnologia pode ajudar o seu
-            negócio?
+            curso?
           </h2>
           <div className="home-buttons2">
             <div className="home-get-started8 template-button">
