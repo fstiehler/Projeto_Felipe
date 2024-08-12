@@ -1,0 +1,54 @@
+.card-geral {
+  width: auto;
+  height: auto;
+}
+
+.card {
+  display: flex;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+.card-content {
+  flex: 1;
+  margin: 2px;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+.card h2 {
+  margin: 0 4 16px;
+  font-size: 24px;
+  color: #333;
+}
+
+.image-cards {
+  width: 100%;
+  height: 24vh;
+  border-radius: 10px;
+}
+
+.duration-certificate {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  padding-left: 14%;
+  color: #777;
+  text-align: center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.description {
+  text-align: left;
+  margin-left: 8px;
+  font-size: 16px;
+  color: #555;
+}

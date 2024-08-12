@@ -40,6 +40,10 @@
   font-size: 18px;
 }
 
+.hero-campaign-div-buttom:hover {
+  background-color: #084340;
+}
+
 .hero-campaign-div-text {
   flex-direction: column;
   padding: 90px;

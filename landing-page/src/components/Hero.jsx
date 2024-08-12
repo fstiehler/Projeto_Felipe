@@ -3,6 +3,7 @@ import "./Hero.css"
 import NavBar from "./NavBar";
 import Carousel from "./Carousel";
 import Campaing from "./Campaing";
+import Border from "./Border";
 
 
 export default function Hero() {
@@ -13,8 +14,10 @@ export default function Hero() {
       <div className="navigation">
         <NavBar />
       </div>
+      <Border />
       <Carousel />
       <Campaing />
+      <Border />
     </div>
   );
 }

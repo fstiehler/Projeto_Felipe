@@ -33,14 +33,15 @@
   flex-direction: column;
   padding-bottom: 120px;
   justify-content: center;
-  /* Centralizar horizontalmente */
   margin: 0 auto;
 }
+
 .home-heading16 {
   text-align: center;
   color: #ffffff;
   font-size: 40px;
 }
+
 .home-buttons2 {
   gap: var(--dl-space-space-unit);
   display: flex;
@@ -60,15 +61,17 @@
 }
 
 .button-action {
-  color: rgb(255, 255, 255);
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 600;
-  line-height: 24px;
+  background-color: #0e716c;
+  color: #ffffff;
+  padding-bottom: -50px;
+  padding: 14px 28px;
+  font-weight: 700;
+  border-radius: 15px;
+  font-size: 18px;
 }
 
 .button-action:hover {
-  color: black;
+  background-color: #084340;
 }
 
 @media (min-width: 992px) and (max-width: 1460px) {
@@ -76,15 +79,26 @@
     font-size: 40px;
     width: 100%;
   }
+
   .home-buttons2 {
-  width: 100%;
+    width: 100%;
   }
+
   .button-action {
     color: rgb(255, 255, 255);
     font-size: 16px;
     font-family: Inter;
     font-weight: 600;
     line-height: 24px;
+  }
+
+  .hero-campaign-div-buttom {
+    background-color: #065f5a;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-weight: 700;
+    border-radius: 15px;
+    font-size: 18px;
   }
 }
 
@@ -93,21 +107,25 @@
     padding-top: var(--dl-space-space-fourunits);
     margin-top: 30%;
   }
+
   .home-heading16 {
     text-align: center;
     color: #ffffff;
     font-size: 30px;
     width: 100%;
   }
+
   .home-header13 {
     padding-bottom: var(--dl-space-space-fiveunits);
     margin-left: 0%;
     width: 100%;
   }
+
   .home-buttons2 {
     flex-direction: column;
     width: 100%;
   }
+
   .button-action {
     color: rgb(255, 255, 255);
     font-size: 15px;
@@ -115,13 +133,39 @@
     font-weight: 800;
     line-height: 24px;
   }
+
   .home-heading13 {
     margin-left: 0%;
     width: 100%;
   }
- 
+
 }
 
-@media (min-width: 321px) and (max-width: 390px) {
- 
+@media (min-width: 420px) and (max-width: 428px) {
+  .hero-campaign-div-buttom {
+    background-color: #075f5a;
+    font-size: 14px;
+    color: #f2f2f2;
+    padding: 10px 10px 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 414px) {
+  .hero-campaign-div-buttom {
+    background-color: #075f5a;
+    font-size: 14px;
+    color: #f2f2f2;
+    padding: 10px 10px 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+  }
+
 }
