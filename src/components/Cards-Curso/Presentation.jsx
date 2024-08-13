@@ -14,6 +14,7 @@ const Search = styled('div')(({ theme }) => ({
   },
   marginLeft: 20,
   width: '74%',
+  // eslint-disable-next-line no-dupe-keys
   borderRadius: "5px",
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(41.4),
