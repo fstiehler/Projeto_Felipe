@@ -3,7 +3,7 @@ import "./App.css";
 import Hero from "./components/Hero";
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
-import { Presentation } from "./components/Presentation";
+import { Presentation } from "./components/Cards-Curso/Presentation";
 
 function App() {
   return (

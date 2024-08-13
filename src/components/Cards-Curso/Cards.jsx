@@ -3,17 +3,14 @@ import "./Cards.css";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import VerifiedIcon from '@mui/icons-material/Verified';
 
-
-
-import Image1 from "../images/cards/image1.png";
-import Image2 from "../images/cards/image2.png";
-import Image3 from "../images/cards/image3.png";
-import Image4 from "../images/cards/image4.png";
-import Image5 from "../images/cards/image5.png";
-import Image6 from "../images/cards/image6.png";
-import Image7 from "../images/cards/image7.png";
-import Image8 from "../images/cards/image8.png";
-
+import Image1 from "../../images/cards/image1.png";
+import Image2 from "../../images/cards/image2.png";
+import Image3 from "../../images/cards/image3.png";
+import Image4 from "../../images/cards/image4.png";
+import Image5 from "../../images/cards/image5.png";
+import Image6 from "../../images/cards/image6.png";
+import Image7 from "../../images/cards/image7.png";
+import Image8 from "../../images/cards/image8.png";
 
 const Cards = () => {
   return (

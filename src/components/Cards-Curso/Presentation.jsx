@@ -3,7 +3,7 @@ import "./Presentation.css"
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import Cards from './Cards';
+import Cards from '../Cards-Curso/Cards';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
