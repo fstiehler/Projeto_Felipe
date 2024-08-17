@@ -16,7 +16,7 @@
 }
 
 .navbar-centered {
-    width: 67%;
+    width: 70%;
     height: 8vh;
     display: flex;
     box-sizing: initial;
@@ -29,14 +29,14 @@
 
 .navbar-logo1 {
     width: 125px;
-    margin-left: 40px;
+    margin-left: 15px;
 }
 
 .navbar-button {
     font-weight: 800;
     padding: 15px;
     border-radius: 15px;
-    margin-left: -50px;
+    margin-left: -35px;
     background-color: #000000;
 }
 
@@ -47,23 +47,26 @@
 .navbar-nav-links {
     display: flex;
     gap: 55px;
-  }
-  
-  .navbar-nav-link {
+}
+
+.navbar-nav-link {
     color: #ffffff;
     text-decoration: none;
     font-weight: 800;
     transition: color 0.3s ease;
-  }
-  
-  .navbar-nav-link:hover {
-    color: #cccccc;
-  }
+}
 
- .navbar-button:hover {
+.navbar-nav-link:hover {
+    color: #cccccc;
+}
+
+.navbar-button:hover {
     background-color: #08213f;
 }
 
+.teste {
+    color: #ffffff;
+}
 
 @media (max-width: 991px) {
     .navbar-centered {

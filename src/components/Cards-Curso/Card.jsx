@@ -11,14 +11,14 @@ const Card = ({ title, imageSrc, description }) => (
         <h2>{title}</h2>
         <img className="image-cards" src={imageSrc} alt={title} />
         <p className="duration-certificate">
-          <AccessTimeIcon className="icon" /> Duração | <VerifiedIcon className="icon" /> Certificado
+          <AccessTimeIcon color='error' className="icon" /> Duração <hr /> <VerifiedIcon color='success' className="icon" /> Certificado
         </p>
         <p className="description">
           {description}
         </p>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }}>
-        <Button href="https://wa.me/5547996277454?text=Ol%C3%A1%20Vim%20atrav%C3%A9s%20do%20instagram.com.br" variant='contained'>Reservar</Button>
+        <Button sx={{ borderRadius: "10px" }} href="https://wa.me/5547996277454?text=Ol%C3%A1%20Vim%20atrav%C3%A9s%20do%20site.com.br" variant='contained'>Reservar</Button>
       </CardActions>
     </CardActionArea>
   </CardMui>

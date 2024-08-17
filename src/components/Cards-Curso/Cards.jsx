@@ -1,4 +1,3 @@
-// src/components/Cards.js
 import React, { useRef } from 'react';
 import { Carousel } from 'antd';
 import Card from '../../components/Cards-Curso/Card';
@@ -173,9 +172,6 @@ const Cards = () => {
                     />
                 </Search>
             </div>
-
-
-
 
             <div className="carousel-container">
                 <Carousel
