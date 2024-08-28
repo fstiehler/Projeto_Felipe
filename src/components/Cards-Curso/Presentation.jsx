@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Presentation.css"
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
@@ -52,6 +52,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export const Presentation = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const cursos = [
+    { id: 1, nome: 'React.js' },
+    { id: 2, nome: 'React Avançado' },
+    { id: 3, nome: 'JavaScript para Iniciantes' },
+  ];
+
+  const cursosFiltrados = cursos.filter((curso) =>
+    curso.nome.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+   
   return (
     <div className="contaiiner">
       <div className="largure">
@@ -63,10 +75,12 @@ export const Presentation = () => {
             <StyledInputBase
               placeholder="Pesquisar…"
               inputProps={{ 'aria-label': 'search' }}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </Search>
         </h2>
-        <Cards />
+        <Cards cursos={cursosFiltrados} />
       </div>
     </div>
   )

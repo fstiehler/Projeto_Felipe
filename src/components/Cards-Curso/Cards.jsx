@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Carousel } from 'antd';
 import Card from '../../components/Cards-Curso/Card';
 import './Cards.css';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import { Button, Typography, Box } from '@mui/material';
 
 import Image1 from '../../images/cards/image1.png';
 import Image2 from '../../images/cards/image2.png';
@@ -14,6 +15,40 @@ import Image5 from '../../images/cards/image5.png';
 import Image6 from '../../images/cards/image6.png';
 import Image7 from '../../images/cards/image7.png';
 import Image8 from '../../images/cards/image8.png';
+
+const allCourses = [
+    { title: 'React.js', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'JavaScript.js', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'TypeScript.js', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Node.js', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Golang', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Python', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'React Native', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'MySQL', imageSrc: Image8, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Java Mastery', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'C++ Commandos', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Ruby Rails', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Swift Success', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Kotlin Keynotes', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'C# Scholars', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Go Gurus', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Objective-C Odyssey', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Shell Script Savvy', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Assembly Artists', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'SQL Specialists', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Bash Basics', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Groovy Geniuses', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'React Native', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Fortran Foundations', imageSrc: Image8, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Rust Rookies', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Scala Sprints', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Perl Prodigy', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Haskell Heroes', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Elixir Experts', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'React Native', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Dart Developers', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
+    { title: 'Lisp Legends', imageSrc: Image8, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' }
+];
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -57,51 +92,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const cardData = [
-    { title: 'React.js', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'JavaScript.js', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'TypeScript.js', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Node.js', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Golang', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Python', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'React Native', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'MySQL', imageSrc: Image8, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' }
-];
-
-const cardDataSecond = [
-    { title: 'React.js', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Node.js', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'JavaScript.js', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'TypeScript.js', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Golang', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'React Native', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Python', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'MySQL', imageSrc: Image8, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' }
-];
-
-const cardDataThird = [
-    { title: 'React.js', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'JavaScript.js', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'TypeScript.js', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Node.js', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Golang', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Python', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'React Native', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'MySQL', imageSrc: Image8, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' }
-];
-
-const cardDataFourth = [
-    { title: 'React.js', imageSrc: Image1, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Node.js', imageSrc: Image4, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'JavaScript.js', imageSrc: Image2, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'TypeScript.js', imageSrc: Image3, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Golang', imageSrc: Image5, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'React Native', imageSrc: Image7, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'Python', imageSrc: Image6, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' },
-    { title: 'MySQL', imageSrc: Image8, description: 'Para uma formação em uma boa escola ou faculdade de programação, o aluno deverá desembolsar entre R$ 700 e R$ 3.000,00 por mês!' }
-];
-
 const Cards = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [showMore, setShowMore] = useState(false);
+
+    const filteredCourses = allCourses.filter(course =>
+        course.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     const carouselRef = useRef(null);
 
     const goToPrev = () => {
@@ -158,134 +156,162 @@ const Cards = () => {
         }
     };
 
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const handleShowMore = () => {
+        setShowMore(!showMore);
+    };
+
     return (
-        <div className='cards-geral'>
-            <div className="largure">
-                <h2 className="textoo">Todos os nossos cursos</h2>
-                <Search>
-                    <SearchIconWrapper>
-                        <SearchIcon />
-                    </SearchIconWrapper>
-                    <StyledInputBase
-                        placeholder="Pesquisar…"
-                        inputProps={{ 'aria-label': 'search' }}
-                    />
-                </Search>
-            </div>
-
-            <div className="carousel-container">
-                <Carousel
-                    autoplay
-                    dots
-                    slidesToShow={4}
-                    slidesToScroll={1}
-                    infinite
-                    ref={carouselRef}
-                    responsive={[
-                        { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                        { breakpoint: 768, settings: { slidesToShow: 2 } },
-                        { breakpoint: 480, settings: { slidesToShow: 1 } }
-                    ]}
-                >
-                    {cardData.map((card, index) => (
-                        <div key={index} className="cards">
-                            <Card
-                                title={card.title}
-                                imageSrc={card.imageSrc}
-                                description={card.description}
+        <Box>
+            <div className='cards-geral'>
+                <Typography variant="body1">
+                    <div className="largure">
+                        <h2 className="textoo">Todos os nossos cursos</h2>
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Pesquisar…"
+                                inputProps={{ 'aria-label': 'search' }}
+                                value={searchTerm}
+                                onChange={handleSearchChange}
                             />
-                        </div>
-                    ))}
-                </Carousel>
-                <button className="custom-prev" onClick={goToPrev}>‹</button>
-                <button className="custom-next" onClick={goToNext}>›</button>
-            </div>
+                        </Search>
+                    </div>
 
-            <div className="carousel-container">
-                <Carousel
-                    autoplay
-                    dots
-                    ref={carouselRefSecond}
-                    slidesToShow={4}
-                    slidesToScroll={1}
-                    infinite
-                    responsive={[
-                        { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                        { breakpoint: 768, settings: { slidesToShow: 2 } },
-                        { breakpoint: 480, settings: { slidesToShow: 1 } }
-                    ]}
-                >
-                    {cardDataSecond.map((card, index) => (
-                        <div key={index} className="cards">
-                            <Card
-                                title={card.title}
-                                imageSrc={card.imageSrc}
-                                description={card.description}
-                            />
-                        </div>
-                    ))}
-                </Carousel>
-                <button className="custom-prev" onClick={goToPrevSecond}>‹</button>
-                <button className="custom-next" onClick={goToNextSecond}>›</button>
-            </div>
-            <div className="carousel-container">
-                <Carousel
-                    autoplay
-                    dots
-                    slidesToShow={4}
-                    ref={carouselRefThird}
-                    slidesToScroll={1}
-                    infinite
-                    responsive={[
-                        { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                        { breakpoint: 768, settings: { slidesToShow: 2 } },
-                        { breakpoint: 480, settings: { slidesToShow: 1 } }
-                    ]}
-                >
-                    {cardDataThird.map((card, index) => (
-                        <div key={index} className="cards">
-                            <Card
-                                title={card.title}
-                                imageSrc={card.imageSrc}
-                                description={card.description}
-                            />
-                        </div>
-                    ))}
-                </Carousel>
-                <button className="custom-prev" onClick={goToPrevThird}>‹</button>
-                <button className="custom-next" onClick={goToNextThird}>›</button>
-            </div>
+                    <div className="carousel-container">
+                        <Carousel
+                            autoplay
+                            dots
+                            slidesToShow={4}
+                            slidesToScroll={1}
+                            infinite
+                            ref={carouselRef}
+                            responsive={[
+                                { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                                { breakpoint: 768, settings: { slidesToShow: 2 } },
+                                { breakpoint: 480, settings: { slidesToShow: 1 } }
+                            ]}
+                        >
+                            {filteredCourses.slice(0, 8).map((card, index) => (
+                                <div key={index} className="cards">
+                                    <Card
+                                        title={card.title}
+                                        imageSrc={card.imageSrc}
+                                        description={card.description}
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                        <button className="custom-prev" onClick={goToPrev}>‹</button>
+                        <button className="custom-next" onClick={goToNext}>›</button>
+                    </div>
 
-            <div className="carousel-container">
-                <Carousel
-                    autoplay
-                    dots
-                    slidesToShow={4}
-                    slidesToScroll={1}
-                    ref={carouselRefFourth}
-                    infinite
-                    responsive={[
-                        { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                        { breakpoint: 768, settings: { slidesToShow: 2 } },
-                        { breakpoint: 480, settings: { slidesToShow: 1 } }
-                    ]}
-                >
-                    {cardDataFourth.map((card, index) => (
-                        <div key={index} className="cards">
-                            <Card
-                                title={card.title}
-                                imageSrc={card.imageSrc}
-                                description={card.description}
-                            />
-                        </div>
-                    ))}
-                </Carousel>
-                <button className="custom-prev" onClick={goToPrevFourth}>‹</button>
-                <button className="custom-next" onClick={goToNextFourth}>›</button>
-            </div>
-        </div>
+                    <div className="carousel-container">
+                        <Carousel
+                            autoplay
+                            dots
+                            ref={carouselRefSecond}
+                            slidesToShow={4}
+                            slidesToScroll={1}
+                            infinite
+                            responsive={[
+                                { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                                { breakpoint: 768, settings: { slidesToShow: 2 } },
+                                { breakpoint: 480, settings: { slidesToShow: 1 } }
+                            ]}
+                        >
+                            {filteredCourses.slice(8, 16).map((card, index) => (
+                                <div key={index} className="cards">
+                                    <Card
+                                        title={card.title}
+                                        imageSrc={card.imageSrc}
+                                        description={card.description}
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                        <button className="custom-prev" onClick={goToPrevSecond}>‹</button>
+                        <button className="custom-next" onClick={goToNextSecond}>›</button>
+                    </div>
 
-    )
-}
+                </Typography>
+
+                {showMore && (
+                    <Typography variant="body2" sx={{ mt: 2 }}>
+
+                        <div className="carousel-container">
+                            <Carousel
+                                autoplay
+                                dots
+                                slidesToShow={4}
+                                ref={carouselRefThird}
+                                slidesToScroll={1}
+                                infinite
+                                responsive={[
+                                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                                    { breakpoint: 480, settings: { slidesToShow: 1 } }
+                                ]}
+                            >
+                                {filteredCourses.slice(16, 24).map((card, index) => (
+                                    <div key={index} className="cards">
+                                        <Card
+                                            title={card.title}
+                                            imageSrc={card.imageSrc}
+                                            description={card.description}
+                                        />
+                                    </div>
+                                ))}
+                            </Carousel>
+                            <button className="custom-prev" onClick={goToPrevThird}>‹</button>
+                            <button className="custom-next" onClick={goToNextThird}>›</button>
+                        </div>
+
+                        <div className="carousel-container">
+                            <Carousel
+                                autoplay
+                                dots
+                                slidesToShow={4}
+                                slidesToScroll={1}
+                                ref={carouselRefFourth}
+                                infinite
+                                responsive={[
+                                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                                    { breakpoint: 480, settings: { slidesToShow: 1 } }
+                                ]}
+                            >
+                                {filteredCourses.slice(24, 32).map((card, index) => (
+                                    <div key={index} className="cards">
+                                        <Card
+                                            title={card.title}
+                                            imageSrc={card.imageSrc}
+                                            description={card.description}
+                                        />
+                                    </div>
+                                ))}
+                            </Carousel>
+                            <button className="custom-prev" onClick={goToPrevFourth}>‹</button>
+                            <button className="custom-next" onClick={goToNextFourth}>›</button>
+                        </div>
+                    </Typography>
+                )}
+                <Button
+                    variant="contained"
+                    onClick={handleShowMore}
+                    color='success'
+                    sx={{ mt: 5, marginLeft: "44%" }}
+                >
+                    {showMore ? 'Mostrar Menos' : 'Mostrar Mais'}
+                </Button>
+            </div>
+        </Box>
+    );
+};
 
 export default Cards;

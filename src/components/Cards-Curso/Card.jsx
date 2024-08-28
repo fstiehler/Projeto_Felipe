@@ -11,7 +11,7 @@ const Card = ({ title, imageSrc, description }) => (
         <h2>{title}</h2>
         <img className="image-cards" src={imageSrc} alt={title} />
         <p className="duration-certificate">
-          <AccessTimeIcon color='error' className="icon" /> Duração <hr /> <VerifiedIcon color='success' className="icon" /> Certificado
+          <AccessTimeIcon color='error' className="icon" /> Duração: 8h<hr /> <VerifiedIcon color='success' className="icon" /> Certificado
         </p>
         <p className="description">
           {description}
