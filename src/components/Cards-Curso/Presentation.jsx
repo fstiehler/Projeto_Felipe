@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
-import "./Presentation.css"
+import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import { Box, Typography, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Cards from '../Cards-Curso/Cards';
+import './Presentation.css';
 
+// Estilo para o contêiner de pesquisa
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.99),
+  backgroundColor: alpha(theme.palette.common.white, 0.9),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.40),
+    backgroundColor: alpha(theme.palette.common.white, 0.75),
   },
-  marginLeft: 20,
-  width: '74%',
-  // eslint-disable-next-line no-dupe-keys
-  borderRadius: "5px",
+  margin: theme.spacing(2, 0),
+  width: '100%',
+  maxWidth: 400,
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(41.4),
-    marginTop: theme.spacing(-4),
-    width: '100',
+    margin: theme.spacing(0, 2),
   },
 }));
 
+// Estilo para o ícone de pesquisa
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
@@ -33,6 +32,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   justifyContent: 'center',
 }));
 
+// Estilo para o campo de entrada de pesquisa
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   width: '100%',
@@ -41,15 +41,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '20ch',
       '&:focus': {
-        width: '20ch',
+        width: '30ch',
       },
     },
   },
 }));
-
-
 
 export const Presentation = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -63,25 +61,26 @@ export const Presentation = () => {
   const cursosFiltrados = cursos.filter((curso) =>
     curso.nome.toLowerCase().includes(searchQuery.toLowerCase())
   );
-   
+
   return (
-    <div className="contaiiner">
-      <div className="largure">
-        <h2 className="textoo">Todos os nossos cursos
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Pesquisar…"
-              inputProps={{ 'aria-label': 'search' }}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </Search>
-        </h2>
+    <Box className="presentation-container">
+      <Box className="presentation-content" sx={{ textAlign: 'center', p: 2 }}>
+        <Typography variant="h4" component="h2" gutterBottom>
+          Todos os nossos cursos
+        </Typography>
+        <Search>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Pesquisar cursos…"
+            inputProps={{ 'aria-label': 'search' }}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </Search>
         <Cards cursos={cursosFiltrados} />
-      </div>
-    </div>
-  )
-}
+      </Box>
+    </Box>
+  );
+};

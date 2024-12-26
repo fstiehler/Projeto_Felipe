@@ -1,7 +1,13 @@
 import './Footer.css';
 import { Alert } from "antd";
 import { useState } from "react";
-import Logo from "../images/logos/evoluinfo.png";
+import Logo from "../images/logos/logo.png";
+import { Box, Button, Grid } from '@mui/material';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import XIcon from '@mui/icons-material/X';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Instagram } from '@mui/icons-material';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -81,73 +87,57 @@ export default function Footer() {
 
   return (
     <footer className="home-footer">
-      {alert}
-      <div className="home-top">
-        <div className="home-left4">
-          <span className="home-text115">Inscreva-se em nossa Newsletter</span>
-          <div className="home-subscription">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="home-textinput input"
-              value={email}
-              onChange={handleEmailChange}
-            />
-            <div className="home-subscribe">
-              <span className="home-text116" onClick={handleSubscribeClick}>Enviar</span>
-            </div>
-          </div>
-          <span className="home-text117">
-            Ao assinar nossa newsletter você concorda com nossos Termos e Condições
-          </span>
-          <div className="home-contact">
-            <span className="home-text118">Contato</span>
-            <a
-              href="mailto:contato@evoluinfo.com.br?subject=Duvidas"
-              className="home-link"
-            >
-              contato@evoluinfo.com.br
-            </a>
-          </div>
-        </div>
-        <div className="home-right3">
-          <div className="home-category5">
-            <span className="home-text119">Soluções</span>
-            <div className="home-links2">
-              <span className="home-text120">WebSites</span>
-              <span className="home-text121">Fabríca de Software</span>
-              <span className="home-text122">Plataformas p/ Confeitarias</span>
-              <span className="home-text123">SEO Avançado</span>
-            </div>
-          </div>
-          <div className="home-category6">
-            <span className="home-text125">Empresa</span>
-            <div className="home-links3">
-              <span className="home-text126">Sobre</span>
-              <span className="home-text127">Equipes</span>
-              <span className="home-text129">Integrações</span>
-              <span className="home-text130">Carreira</span>
-            </div>
-          </div>
-          <div className="home-category7">
-            <span className="home-text132">Novidades</span>
-            <div className="home-links4">
-              <span className="home-text133">Candy Store - Ecossistema</span>
-              <span className="home-text134">SantaAnna - by Candy Store</span>
-              <span className="home-text135">Amor&Doce - by Candy Store</span>
-              <span className="home-text136">Eko Global Forwarding</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="home-bottom">
-        <img
-          alt="pastedImage"
-          src={Logo}
-          className="home-branding"
-        />
-        <span className="home-text138">Copyright © Fillipi Villani - {currentYear}</span>
-      </div>
+      <Grid container spacing={4} p={8} alignItems="center" justifyContent="center">
+        {alert}
+        <Box className="home-bottom">
+          <img
+            alt="Logo"
+            src={Logo}
+            className="home-branding"
+          />
+          <span className="home-text138">Copyright © Fillipi Villani - {currentYear}</span>
+        </Box>
+        <Box
+          sx={{
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            onClick={handleSubscribeClick}
+            sx={{
+              backgroundColor: "#E4535E",
+              color: "white",
+              fontWeight: 800,
+              borderRadius: 2,
+              padding: "15px 40px",
+              "&:hover": {
+                backgroundColor: "#d3424e",
+              },
+            }}
+          >
+            Inscreva-se
+          </Button>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 1.2,
+              color: "white",
+              marginTop: 2,
+              marginLeft: -2
+            }}
+          >
+            <FacebookIcon fontSize="large" />
+            <Instagram fontSize="large" />
+            <LinkedInIcon fontSize="large" />
+            <XIcon fontSize="large" />
+            <YouTubeIcon fontSize="large" />
+          </Box>
+        </Box>
+      </Grid>
     </footer>
   );
 }

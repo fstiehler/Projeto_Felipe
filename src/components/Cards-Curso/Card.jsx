@@ -4,14 +4,14 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import './Card.css';
 import { Button, CardActionArea, CardActions, CardContent, Card as CardMui } from '@mui/material';
 
-const Card = ({ title, imageSrc, description }) => (
+const Card = ({ title, imageSrc, description, duraction }) => (
   <CardMui>
     <CardActionArea>
       <CardContent>
         <h2>{title}</h2>
         <img className="image-cards" src={imageSrc} alt={title} />
-        <p className="duration-certificate">
-          <AccessTimeIcon color='error' className="icon" /> Duração: 8h<hr /> <VerifiedIcon color='success' className="icon" /> Certificado
+        <p className="duration-certificate" src={duraction}>
+          <AccessTimeIcon color='error' className="icon" /> Duração: 5H<hr /> <VerifiedIcon color='success' className="icon" /> Certificado
         </p>
         <p className="description">
           {description}

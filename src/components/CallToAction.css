@@ -2,14 +2,12 @@
   gap: var(--dl-space-space-fiveunits);
   flex: 1;
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
-  padding-top: 120px;
-  padding-left: var(--dl-space-space-oneandhalfunits);
-  padding-right: var(--dl-space-space-oneandhalfunits);
   flex-direction: column;
   justify-content: center;
-  background-color: #287a76;
+  background-color: #154BC8;
   text-align: center;
 }
 
