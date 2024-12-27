@@ -7,7 +7,7 @@ import Image from "../images/About.jpeg"
 
 export default function AboutUs() {
     return (
-        <Box className="home-section17" sx={{ padding: 5, justifyContent: "center" }}>
+        <Box sx={{ padding: 5, justifyContent: "center" }}>
             <Grid container spacing={4} alignItems="center" justifyContent="center">
                 <Grid item xs={12} md={4} paddingLeft={10}>
                     <Grid container spacing={2}>

@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Cards from "./components/Cards-Curso/Cards";
 import AboutUs from "./components/AboutUs";
 import { Box } from "@mui/material";
+import Depoiment from "./components/Depoiments/Depoiment";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Cards />
       <CallToAction />
       <AboutUs />
+      <Depoiment />
       <Footer />
     </Box>
   );

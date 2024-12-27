@@ -13,7 +13,7 @@ export default function CallToAction() {
   ];
 
   return (
-    <Box className="home-section17" sx={{ padding: 5, backgroundColor: "#154BC8", justifyContent: "center" }}>
+    <Box sx={{ padding: 5, backgroundColor: "#154BC8", justifyContent: "center" }}>
       <Grid container spacing={4} alignItems="center" justifyContent= "center">
         <Grid item xs={12} md={4}>
           <Box>

@@ -3,7 +3,6 @@ import { styled, alpha } from '@mui/material/styles';
 import { Box, Typography, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import Cards from '../Cards-Curso/Cards';
-import './Presentation.css';
 
 // Estilo para o contêiner de pesquisa
 const Search = styled('div')(({ theme }) => ({
@@ -63,8 +62,16 @@ export const Presentation = () => {
   );
 
   return (
-    <Box className="presentation-container">
-      <Box className="presentation-content" sx={{ textAlign: 'center', p: 2 }}>
+    <Box sx={{
+      width: "100%",
+      height: "200vh",
+      backgroundColor: "#e0e0e0"
+    }}>
+      <Box sx={{
+        textAlign: 'center', p: 2, width: "67%",
+        paddinTop: "5%",
+        marginLeft: "18.5%",
+      }}>
         <Typography variant="h4" component="h2" gutterBottom>
           Todos os nossos cursos
         </Typography>
