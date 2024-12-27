@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
 import Cards from "./components/Cards-Curso/Cards";
-import Depoimentos from "./components/Depoimentos";
+import AboutUs from "./components/AboutUs";
 import { Box } from "@mui/material";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Hero />
       <Cards />
       <CallToAction />
-      <Depoimentos />
+      <AboutUs />
       <Footer />
     </Box>
   );
