@@ -6,7 +6,7 @@ const Border = () => {
         <Box sx={{
             width: "100%",
             padding: "5px",
-            backgroundColor: "#022266"
+            backgroundColor: "#0B53B8"
         }} />
     )
 }
