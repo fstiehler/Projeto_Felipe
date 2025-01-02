@@ -53,23 +53,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const CarouselWrapper = ({ courses, carouselRef }) => (
     <div className="carousel-container">
         <Carousel
-            autoplay
-            dots
-            slidesToShow={4}
-            slidesToScroll={1}
-            infinite
-            ref={carouselRef}
-        >
-            {courses.map((card, index) => (
-                <div key={index} className="cards">
-                    <Card
-                        title={card.title}
-                        imageSrc={card.imageSrc}
-                        description={card.description}
-                    />
-                </div>
-            ))}
-        </Carousel>
+    autoplay
+    dots
+    slidesToShow={window.innerWidth < 768 ? 1 : 4}
+    slidesToScroll={1}
+    infinite
+    ref={carouselRef}
+>
+    {courses.map((card, index) => (
+        <div key={index} className="cards">
+            <Card
+                title={card.title}
+                imageSrc={card.imageSrc}
+                description={card.description}
+            />
+        </div>
+    ))}
+</Carousel>
+
         <button className="custom-prev" onClick={() => carouselRef.current?.prev()}>‹</button>
         <button className="custom-next" onClick={() => carouselRef.current?.next()}>›</button>
     </div>
@@ -116,7 +117,7 @@ const Cards = () => {
                     variant="contained"
                     onClick={() => setShowMore(!showMore)}
                     color='success'
-                    sx={{ mt: 5, marginLeft: "44%" }}
+                    sx={{ mt: 2.5, mb: 2, display: "flex", justifySelf: "center" }}
                 >
                     {showMore ? 'Mostrar Menos' : 'Mostrar Mais'}
                 </Button>

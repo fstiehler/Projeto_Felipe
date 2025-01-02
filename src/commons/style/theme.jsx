@@ -1,12 +1,12 @@
 const colors = {
-  primary: '#CB6A7D',
+  primary: '#0047AB',
   secondary: '#E3BC95',
   tertiary: '#A96224',
   quartiary: '#818C39',
   black: '#000',
   blackLow: '#515151',
   white: '#fff',
-  red: '#ff0000'
+  red: "#E4535E"
 };
 
 const numbers = {

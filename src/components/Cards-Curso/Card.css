@@ -18,12 +18,16 @@
 .card-content h2 {
   margin: 0 0 16px;
   font-size: 18px;
+  /* Fonte do título */
+  font-weight: 600;
+  /* Maior peso da fonte */
   color: #333;
 }
 
 .image-cards {
   width: 100%;
   height: 200px;
+  /* Reduz a altura da imagem */
   border-radius: 10px;
   object-fit: cover;
 }
@@ -34,6 +38,7 @@
   justify-content: center;
   padding: 10px 0;
   font-size: 14px;
+  /* Fonte do texto de duração */
   color: #777;
 }
 
@@ -45,5 +50,30 @@
   text-align: center;
   margin-top: 8px;
   font-size: 14px;
+  /* Tamanho da descrição */
   color: #555;
+}
+
+
+
+@media (max-width: 480px) {
+  .card-content h2 {
+    font-size: 16px;
+    /* Tamanho da fonte do título ajustado */
+  }
+
+  .description {
+    font-size: 12px;
+    /* Descrição menor em telas pequenas */
+  }
+
+  .duration-certificate {
+    font-size: 12px;
+    /* Fonte ajustada para telas pequenas */
+  }
+
+  .image-cards {
+    height: 150px;
+    /* Ajuste da altura da imagem */
+  }
 }

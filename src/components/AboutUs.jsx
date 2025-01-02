@@ -17,18 +17,21 @@ export default function AboutUs() {
             },
         }),
     };
-
     return (
         <Box
             id="aboutUsSection"
-            sx={{ padding: 5, justifyContent: "center" }}
+            sx={{ padding: { xs: 3, sm: 4, md: 5 }, justifyContent: "center" }}
         >
             <Grid container spacing={4} alignItems="center" justifyContent="center">
-                <Grid item xs={12} md={4} paddingLeft={10}>
+                <Grid item xs={12} md={4} paddingLeft={{ xs: 0, md: 10 }}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={8}>
                             <img
-                                style={{ width: "125%", borderRadius: 10 }}
+                                style={{
+                                    width: "100%",
+                                    borderRadius: 10,
+                                    objectFit: "cover",
+                                }}
                                 src={Image}
                                 alt="Sobre"
                             />
@@ -47,7 +50,7 @@ export default function AboutUs() {
                                 variant="h5"
                                 sx={{
                                     color: "darkblue",
-                                    fontSize: "32px",
+                                    fontSize: { xs: "24px", sm: "28px", md: "32px" },
                                     fontWeight: 800,
                                     marginBottom: 2,
                                 }}
@@ -61,7 +64,7 @@ export default function AboutUs() {
                                 variant="body1"
                                 sx={{
                                     color: "darkslateblue",
-                                    fontSize: "22px",
+                                    fontSize: { xs: "18px", sm: "20px", md: "22px" },
                                     fontWeight: 550,
                                     marginBottom: 0.5,
                                 }}
@@ -75,7 +78,7 @@ export default function AboutUs() {
                                 variant="body2"
                                 sx={{
                                     color: "#474954",
-                                    fontSize: "17px",
+                                    fontSize: { xs: "14px", sm: "16px", md: "17px" },
                                     fontWeight: 300,
                                     lineHeight: "20px",
                                     marginBottom: 3,
@@ -93,7 +96,7 @@ export default function AboutUs() {
                                 variant="body1"
                                 sx={{
                                     color: "darkslateblue",
-                                    fontSize: "22px",
+                                    fontSize: { xs: "18px", sm: "20px", md: "22px" },
                                     fontWeight: 550,
                                     marginBottom: 0.5,
                                 }}
@@ -107,7 +110,7 @@ export default function AboutUs() {
                                 variant="body2"
                                 sx={{
                                     color: "#474954",
-                                    fontSize: "17px",
+                                    fontSize: { xs: "14px", sm: "16px", md: "17px" },
                                     fontWeight: 300,
                                     lineHeight: "20px",
                                     marginBottom: 3,
@@ -124,7 +127,7 @@ export default function AboutUs() {
                                 variant="body1"
                                 sx={{
                                     color: "darkslateblue",
-                                    fontSize: "22px",
+                                    fontSize: { xs: "18px", sm: "20px", md: "22px" },
                                     fontWeight: 550,
                                     marginBottom: 0.5,
                                 }}
@@ -138,7 +141,7 @@ export default function AboutUs() {
                                 variant="body2"
                                 sx={{
                                     color: "#474954",
-                                    fontSize: "17px",
+                                    fontSize: { xs: "14px", sm: "16px", md: "17px" },
                                     fontWeight: 300,
                                     lineHeight: "20px",
                                     marginBottom: 3,

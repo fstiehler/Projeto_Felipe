@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  flex-wrap: wrap;
+  /* Permitir que os cards quebrem em múltiplas linhas se necessário */
 }
 
 .largure {
@@ -22,13 +24,18 @@
   margin-left: -19%;
   color: #000000;
   font-size: 28px;
+  /* Ajuste de fonte para telas maiores */
+  font-weight: 600;
+  /* Aumenta o peso da fonte */
 }
+
 
 .carousel-container {
   position: relative;
 }
 
-.custom-prev, .custom-next {
+.custom-prev,
+.custom-next {
   background-color: #e4e4e4;
   border: 1px solid #d9d9d9;
   border-radius: 50%;
@@ -51,21 +58,122 @@
   right: -40px;
 }
 
+/* Responsividade para telas grandes (tablets e dispositivos médios) */
 @media (max-width: 1024px) {
+  .cards-geral {
+    width: 90%;
+    /* Ajustar a largura para que ocupe mais espaço */
+  }
+
   .cards {
-    padding: 5px;
+    padding: 10px;
+    flex-direction: column;
+    /* Alinhar os cards verticalmente */
+  }
+
+  .carousel-container {
+    width: 100%;
+  }
+
+  .textoo {
+    font-size: 26px;
+    /* Ajuste do tamanho do título para tablets */
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .custom-prev,
+  .custom-next {
+    display: none;
+    /* Ocultar botões de navegação em telas menores */
   }
 }
 
+/* Responsividade para dispositivos móveis (celulares e tablets pequenos) */
+/* Responsividade para dispositivos móveis (celulares e tablets pequenos) */
 @media (max-width: 768px) {
   .largure {
-    margin-left: 10%;
     width: 90%;
+    margin-left: 5%;
+  }
+
+  .textoo {
+    font-size: 22px;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .cards-geral {
+    width: 95%;
+  }
+
+  .cards {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .carousel-container {
+    width: 100%;
+  }
+
+  /* Botões de navegação no carrossel visíveis em telas pequenas */
+  .custom-prev,
+  .custom-next {
+    display: block;
+    /* Mostrar os botões */
+    background-color: #e4e4e4;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .custom-prev {
+    right: 30px;
+    /* Ajuste para o lado esquerdo */
+  }
+
+  .custom-next {
+    right: -40px;
+    /* Ajuste para o lado direito */
   }
 }
 
+
+/* Responsividade para telas muito pequenas (celulares) */
 @media (max-width: 480px) {
   .textoo {
-    font-size: 24px;
+    font-size: 18px;
+    /* Fonte menor em telas muito pequenas */
+  }
+
+  .cards-geral {
+    width: 80%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .cards {
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 20px;
+  }
+
+  .custom-prev,
+  .custom-next {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .largure {
+    width: 100%;
   }
 }

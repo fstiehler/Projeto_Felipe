@@ -18,7 +18,7 @@ const Card = ({ title, imageSrc, description, duraction }) => (
         </p>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }}>
-        <Button sx={{ borderRadius: "10px" }} href="https://wa.me/5547996277454?text=Ol%C3%A1%20Vim%20atrav%C3%A9s%20do%20site.com.br" variant='contained'>Reservar</Button>
+        <Button sx={{ borderRadius: "10px", fontSize: "12px" }} href="https://wa.me/5547996277454?text=Ol%C3%A1%20Vim%20atrav%C3%A9s%20do%20site.com.br" variant='contained'>Reservar</Button>
       </CardActions>
     </CardActionArea>
   </CardMui>

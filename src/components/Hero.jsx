@@ -4,21 +4,22 @@ import NavBar from "./NavBar";
 import Carousel from "./Carousel";
 import Campaing from "./Campaing";
 import Border from "./Border";
+import { Box } from "@mui/material";
 
 
 export default function Hero() {
 
 
   return (
-    <div className="tudo">
-      <div className="navigation">
+    <Box >
+      <Box className="navigation">
         <NavBar />
-      </div>
+      </Box>
       <Border />
       <Carousel />
       <Campaing />
       <Border />
-    </div>
+    </Box>
   );
 }
 

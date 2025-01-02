@@ -22,14 +22,14 @@ export const allCourses = [
     title: "React.js",
     imageSrc: Image1,
     description:
-      "Domine a criação de interfaces interativas, componha layouts reutilizáveis e aprenda sobre hooks, estado e roteamento para aplicações modernas.",
+      "Domine a criação de interfaces interativas, componha layouts reutilizáveis e aprenda sobre hooks, estado e roteamento.",
       duraction: "8h"
   },
   {
     title: "JavaScript.js",
     imageSrc: Image2,
     description:
-      "Aprenda os fundamentos da linguagem, manipulação de DOM, funções assíncronas, arrays e objetos para desenvolver aplicações dinâmicas.",
+      "Aprenda os fundamentos da linguagem, manipulação de DOM, funções assíncronas, arrays e objetos para desenvolver.",
     duraction: "8h"
   },
   {
@@ -53,7 +53,7 @@ export const allCourses = [
   {
     title: "Python",
     imageSrc: Image6,
-    description: "Domine Python para análise de dados, automação e desenvolvimento web, com uma das linguagens mais populares.",
+    description: "Domine Python para análise de dados, automação e desenvolvimento web, com uma das linguagens.",
     duraction: "8h"
   },
   {
@@ -71,19 +71,19 @@ export const allCourses = [
   {
     title: "Java Mastery",
     imageSrc: Image9,
-    description: "Aprenda a programar com Java, uma das linguagens mais usadas em sistemas corporativos e aplicativos móveis.",
+    description: "Aprenda a programar com Java, uma das linguagens mais usadas em sistema.",
     duraction: "8h"
   },
   {
     title: "C++ Commandos",
     imageSrc: Image10,
-    description: "Explore C++ para desenvolver sistemas de alta performance, jogos e aplicativos exigentes.",
+    description: "Explore C++ para desenvolver sistemas de alta performance, jogos e aplicativos.",
     duraction: "8h"
   },
   {
     title: "Ruby Rails",
     imageSrc: Image11,
-    description: "Aprenda Ruby on Rails, o framework que facilita a criação de aplicações web rápidas e eficientes.",
+    description: "Aprenda Ruby on Rails, o framework que facilita a criação de aplicações web rápidas.",
     duraction: "8h"
   },
   {
@@ -95,13 +95,13 @@ export const allCourses = [
   {
     title: "Kotlin Keynotes",
     imageSrc: Image13,
-    description: "Aprenda Kotlin para desenvolver aplicativos Android modernos e poderosos com uma linguagem funcional.",
+    description: "Aprenda Kotlin para desenvolver aplicativos Android modernos e poderosos.",
     duraction: "8h"
   },
   {
     title: "C# Scholars",
     imageSrc: Image14,
-    description: "Domine C# para criar aplicações robustas, especialmente em jogos e sistemas corporativos.",
+    description: "Domine C# para criar aplicações robustas, especialmente em jogos e sistemas",
     duraction: "8h"
   },
   {

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { styled, alpha } from '@mui/material/styles';
 import { Box, Typography, InputBase } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import Cards from '../Cards-Curso/Cards';
 
 // Estilo para o contêiner de pesquisa
-const Search = styled('div')(({ theme }) => ({
+const SearchWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.9),
@@ -69,23 +69,25 @@ export const Presentation = () => {
     }}>
       <Box sx={{
         textAlign: 'center', p: 2, width: "67%",
-        paddinTop: "5%",
+        paddingTop: "5%",
         marginLeft: "18.5%",
       }}>
         <Typography variant="h4" component="h2" gutterBottom>
           Todos os nossos cursos
         </Typography>
-        <Search>
+
+        <SearchWrapper>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase
             placeholder="Pesquisar cursos…"
-            inputProps={{ 'aria-label': 'search' }}
+            inputProps={{ 'aria-label': 'pesquisar cursos' }}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-        </Search>
+        </SearchWrapper>
+
         <Cards cursos={cursosFiltrados} />
       </Box>
     </Box>

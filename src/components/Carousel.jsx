@@ -1,13 +1,24 @@
 import "./Carousel.css";
-import { Carousel } from 'antd';
+import { Carousel } from "antd";
+import { Box, useMediaQuery } from "@mui/material";
 
 import Banner1 from "../images/carousel/banner01.webp";
 import Banner2 from "../images/carousel/banner02.webp";
 import Banner3 from "../images/carousel/banner03.webp";
 import Banner4 from "../images/carousel/banner04.webp";
-import { Box } from "@mui/material";
+import BannerMobile5 from "../images/carousel/bannerMobile5.jpeg";
+import BannerMobile2 from "../images/carousel/bannerMobile2.jpeg";
+import BannerMobile3 from "../images/carousel/bannerMobile3.jpeg";
+import BannerMobile4 from "../images/carousel/bannerMobile4.jpeg";
+import { Link } from "react-scroll";
 
 const Carrousel = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const bannersDesktop = [Banner1, Banner2, Banner3, Banner4];
+  const bannersMobile = [BannerMobile5, BannerMobile2, BannerMobile3, BannerMobile4];
+
+  const banners = isMobile ? bannersMobile : bannersDesktop;
+
   return (
     <Box className="container">
       <Carousel
@@ -17,48 +28,14 @@ const Carrousel = () => {
         slidesToShow={1}
         slidesToScroll={1}
         infinite={true}
-        responsive={[
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 1,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-            },
-          },
-        ]}
       >
-        <Box className="carrousel-item">
-          <a href="/src/components/Filter/Filter.tsx">
-            <img className="image" src={Banner1} alt="banner1" />
-          </a>
-          <img className="image-mobile" src={Banner1} alt="banner-mobile-1" />
-        </Box>
-
-        <Box className="carrousel-item">
-          <a href="/src/components/Filter/Filter.tsx">
-            <img className="image" src={Banner2} alt="banner2" />
-          </a>
-          <img className="image-mobile" src={Banner2} alt="banner-mobile-2" />
-        </Box>
-
-        <Box className="carrousel-item">
-          <a href="/src/components/Filter/Filter.tsx">
-            <img className="image" src={Banner3} alt="banner3" />
-          </a>
-          <img className="image-mobile" src={Banner3} alt="banner-mobile-3" />
-        </Box>
-
-        <Box className="carrousel-item">
-          <a href="/src/components/Filter/Filter.tsx">
-            <img className="image" src={Banner4} alt="banner4" />
-          </a>
-          <img className="image-mobile" src={Banner4} alt="banner-mobile-4" />
-        </Box>
+        {banners.map((banner, index) => (
+          <Box className="carrousel-item" key={index}>
+            <Link to="presentation" smooth={true} duration={500}>
+              <img className="image" src={banner} alt={`banner-${index + 1}`} />
+            </Link>
+          </Box>
+        ))}
       </Carousel>
     </Box>
   );

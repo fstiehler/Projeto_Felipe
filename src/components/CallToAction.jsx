@@ -14,21 +14,35 @@ export default function CallToAction() {
 
   return (
     <Box sx={{ padding: 5, backgroundColor: "#0B53B8", justifyContent: "center" }}>
-      <Grid container spacing={4} alignItems="center" justifyContent= "center">
+      <Grid container spacing={4} alignItems="center" justifyContent="center">
         <Grid item xs={12} md={4}>
           <Box>
             <Typography
               variant="h4"
-              sx={{ color: "white", fontSize: "38px", fontWeight: 500, lineHeight: "38px", marginBottom: 2 }}
+              sx={{
+                color: "white",
+                fontSize: { xs: "28px", sm: "32px", md: "38px" },
+                fontWeight: 500,
+                lineHeight: { xs: "30px", sm: "34px", md: "38px" },
+                marginBottom: 2,
+              }}
             >
               Você já sai com todo o <br /> preparo para o mercado
             </Typography>
+
             <Typography
               variant="body1"
-              sx={{ color: "white", fontSize: "20px", fontWeight: 300, lineHeight: "24px", marginBottom: 3 }}
+              sx={{
+                color: "white",
+                fontSize: { xs: "16px", sm: "18px", md: "20px" },
+                fontWeight: 300,
+                lineHeight: { xs: "20px", sm: "22px", md: "24px" },
+                marginBottom: 3,
+              }}
             >
               Aqui você tem programas de estágios e orientações <br /> para conquistar sua vaga.
             </Typography>
+
             <Button
               sx={{
                 backgroundColor: "#E4535E",
@@ -50,13 +64,13 @@ export default function CallToAction() {
           <Grid container spacing={2}>
             {cards.map((card, index) => (
               <Grid item xs={12} sm={6} key={index}>
-                <Card sx={{height: "100%", paddingLeft: 2, textAlign: "center", backgroundColor: "#154BC8", border: 2, borderRadius: 4, color: "white" }}>
+                <Card sx={{ height: "100%", paddingLeft: 2, textAlign: "center", backgroundColor: "#154BC8", border: 2, borderRadius: 4, color: "white" }}>
                   <CardContent>
                     <Typography color="white" sx={{ textAlign: "left" }}>{card.icon}</Typography>
                     <Typography variant="h3" color="#C2ECFF" sx={{ fontWeight: 400, textAlign: "left" }}>
                       {card.title}
                     </Typography>
-                    <Typography variant="body2" color="white" sx={{textAlign: "left"}}>
+                    <Typography variant="body2" color="white" sx={{ textAlign: "left" }}>
                       {card.description}
                     </Typography>
                   </CardContent>

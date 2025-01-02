@@ -123,7 +123,6 @@ export default function Footer() {
               gap: 1.2,
               color: "white",
               marginTop: 2,
-              marginLeft: -2
             }}
           >
             <FacebookIcon fontSize="large" />
@@ -137,3 +136,4 @@ export default function Footer() {
     </footer>
   );
 }
+
