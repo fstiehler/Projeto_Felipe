@@ -3,91 +3,20 @@ import "./NavBar.css";
 import Logo from "../images/logos/logo.png";
 import { Button, Box, MenuItem, Typography } from "@mui/material";
 import Menu from "@mui/material/Menu";
-import AboutUs from "../components/AboutUs"
+import { Link } from "react-scroll";
 
 export default function NavBar() {
-  // Estado separado para cada item de menu
-  const [anchorElGrad, setAnchorElGrad] = useState(null);
-  const [anchorElPost, setAnchorElPost] = useState(null);
-  const [anchorElAluno, setAnchorElAluno] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [menuItems, setMenuItems] = useState([]);
 
-  const openGrad = Boolean(anchorElGrad);
-  const openPost = Boolean(anchorElPost);
-  const openAluno = Boolean(anchorElAluno);
-
-  // Funções para abrir o menu de cada item
-  const handleMenuOpenGrad = (event) => setAnchorElGrad(event.currentTarget);
-  const handleMenuOpenPost = (event) => setAnchorElPost(event.currentTarget);
-  const handleMenuOpenAluno = (event) => setAnchorElAluno(event.currentTarget);
-
-  const handleMenuClose = () => {
-    setAnchorElGrad(null);
-    setAnchorElPost(null);
-    setAnchorElAluno(null);
+  const handleMenuOpen = (event, items) => {
+    setAnchorEl(event.currentTarget);
+    setMenuItems(items);
   };
 
-  // Menu para Graduação
-  const renderMenuGrad = () => (
-    <Menu
-      anchorEl={anchorElGrad}
-      open={openGrad}
-      onClose={handleMenuClose}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "left",
-      }}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
-    </Menu>
-  );
-
-  // Menu para Pós-graduação
-  const renderMenuPost = () => (
-    <Menu
-      anchorEl={anchorElPost}
-      open={openPost}
-      onClose={handleMenuClose}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "left",
-      }}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
-    </Menu>
-  );
-
-  // Menu para Área do aluno
-  const renderMenuAluno = () => (
-    <Menu
-      anchorEl={anchorElAluno}
-      open={openAluno}
-      onClose={handleMenuClose}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "left",
-      }}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
-    </Menu>
-  );
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <Box className="navbar-menu">
@@ -95,43 +24,42 @@ export default function NavBar() {
         <nav className="navbar-centered">
           <img style={{ width: "18%" }} alt="Logo" src={Logo} />
           <Box className="navbar-nav-links">
-            <Typography src={ <AboutUs/> } className="navbar-nav-link" component="a">
-              Conheça a FullEducation
+            <Typography
+              style={{ cursor: "pointer" }}
+              component="a"
+              className="navbar-nav-link"
+            >
+              <Link to="aboutUsSection" smooth={false} duration={500}>
+                Conheça a FullEducation
+              </Link>
             </Typography>
 
             <Typography
-              onClick={handleMenuOpenGrad}
               className="navbar-nav-link"
               component="a"
-              href="#aluno"
+              onMouseEnter={(e) => handleMenuOpen(e, ["Curso 1", "Curso 2", "Curso 3"])}
               style={{ cursor: "pointer" }}
             >
               Graduação
             </Typography>
-            {renderMenuGrad()}
 
             <Typography
-              onClick={handleMenuOpenPost}
               className="navbar-nav-link"
               component="a"
-              href="#aluno"
+              onMouseEnter={(e) => handleMenuOpen(e, ["Curso A", "Curso B", "Curso C"])}
               style={{ cursor: "pointer" }}
             >
               Pós-graduação
             </Typography>
-            {renderMenuPost()}
 
             <Typography
-              onClick={handleMenuOpenAluno}
               className="navbar-nav-link"
               component="a"
-              href="#aluno"
+              onMouseEnter={(e) => handleMenuOpen(e, ["Perfil", "Minha conta", "Logout"])}
               style={{ cursor: "pointer" }}
             >
               Área do aluno
             </Typography>
-            {renderMenuAluno()}
-
           </Box>
           <Button
             sx={{
@@ -149,6 +77,29 @@ export default function NavBar() {
           </Button>
         </nav>
       </Box>
+
+      <Menu
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleMenuClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+        MenuListProps={{
+          onMouseLeave: handleMenuClose,
+        }}
+      >
+        {menuItems.map((item, index) => (
+          <MenuItem key={index} onClick={handleMenuClose}>
+            {item}
+          </MenuItem>
+        ))}
+      </Menu>
     </Box>
   );
 }

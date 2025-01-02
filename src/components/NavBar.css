@@ -39,6 +39,7 @@
 }
 
 .navbar-nav-links {
+  font-size: large;
   font-weight: 900;
   display: flex;
   gap: 55px;
@@ -49,7 +50,6 @@
   text-decoration: none;
   font-weight: 900;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 12px;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 

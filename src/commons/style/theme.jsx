@@ -1,11 +1,3 @@
-export interface StyleClosetTheme {
-  colors: { [key in keyof typeof colors]: string };
-  numbers: { [key in keyof typeof numbers]: string };
-  breakpoints: { [key in keyof typeof breakpoints]: string };
-  links: { [key in keyof typeof links]: string };
-  store: { [key in keyof typeof store]: number };
-}
-
 const colors = {
   primary: '#CB6A7D',
   secondary: '#E3BC95',
@@ -18,11 +10,11 @@ const colors = {
 };
 
 const numbers = {
-  whatsapp: '+5547992393892',
+  whatsapp: '+5547996277454',
 };
 
 const links = {
-  instagram: 'santaannaconfeitaria',
+  instagram: 'fulleducationonline',
   maps: 'https://maps.app.goo.gl/r4PuyVD8KUAzQxmL7',
 };
 
@@ -37,7 +29,7 @@ const breakpoints = {
   desktop: '1280px',
 };
 
-const theme: StyleClosetTheme = {
+const theme = {
   colors,
   numbers,
   breakpoints,

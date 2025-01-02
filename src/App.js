@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import Hero from "./components/Hero";
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
@@ -7,6 +6,7 @@ import Cards from "./components/Cards-Curso/Cards";
 import AboutUs from "./components/AboutUs";
 import { Box, Modal, Typography, Button } from "@mui/material";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Maps from "./components/Maps";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -33,7 +33,7 @@ function App() {
             boxShadow: 24,
             p: 4,
             textAlign: "center",
-            color: "white"
+            color: "white",
           }}
         >
           <Typography id="modal-title" variant="h6" component="h2" gutterBottom>
@@ -47,12 +47,13 @@ function App() {
           </Button>
         </Box>
       </Modal>
-      <Box className="app">
+      <Box sx={{ width: "100%" }}>
         <Hero />
         <Cards />
         <CallToAction />
         <AboutUs />
         <Testimonials />
+        <Maps />
         <Footer />
       </Box>
     </>

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from './styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -163,7 +163,7 @@ const GlobalStyle = createGlobalStyle`
     text-transform: none;
     text-decoration: none;
   }
-  
+
   @media (max-width: 991px) {
     .testimonal {
       padding-top: var(--dl-space-space-threeunits);
@@ -218,4 +218,5 @@ const GlobalStyle = createGlobalStyle`
     }
   }  
 `;
+
 export default GlobalStyle;

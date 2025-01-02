@@ -11,12 +11,8 @@ import { Instagram } from '@mui/icons-material';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState("");
+  const [email] = useState("");
   const [alert, setAlert] = useState(null);
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
 
   const closeAlert = () => {
     setAlert(null);
