@@ -7,6 +7,7 @@ import AboutUs from "./components/AboutUs";
 import { Box, Modal, Typography, Button } from "@mui/material";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Maps from "./components/Maps";
+import FloatButtonService from "./components/FloatButtonService";
 
 function App() {
   const [open, setOpen] = useState(true);
@@ -54,6 +55,7 @@ function App() {
         <AboutUs />
         <Testimonials />
         <Maps />
+        <FloatButtonService />
         <Footer />
       </Box>
     </>

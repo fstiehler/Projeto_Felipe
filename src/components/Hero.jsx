@@ -6,10 +6,7 @@ import Campaing from "./Campaing";
 import Border from "./Border";
 import { Box } from "@mui/material";
 
-
 export default function Hero() {
-
-
   return (
     <Box >
       <Box className="navigation">
