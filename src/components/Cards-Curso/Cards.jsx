@@ -10,7 +10,7 @@ import { allCourses } from './coursesData';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
-    backgroundColor: alpha(theme.palette.common.white, 0.99),
+    backgroundColor: alpha(theme.palette.common.white, 2),
     '&:hover': {
         backgroundColor: alpha(theme.palette.common.white, 0.70),
     },
@@ -18,7 +18,7 @@ const Search = styled('div')(({ theme }) => ({
     width: '100%',
     borderRadius: '10px',
     [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(19),
+        marginLeft: theme.spacing(20),
         marginBottom: theme.spacing(4),
         width: '103.2%',
     },

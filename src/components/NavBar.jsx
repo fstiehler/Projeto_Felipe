@@ -16,23 +16,25 @@ import {
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { Link } from "react-scroll";
 import { theme } from "../commons/style/theme";
 
 export default function NavBar() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [menuItems, setMenuItems] = useState([]);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null); // Elemento âncora para o menu
+  const [menuItems, setMenuItems] = useState([]); // Itens do menu
+  const [drawerOpen, setDrawerOpen] = useState(false); // Controle do Drawer
 
+  // Abre o menu
   const handleMenuOpen = (event, items) => {
     setAnchorEl(event.currentTarget);
     setMenuItems(items);
   };
 
+  // Fecha o menu
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
 
+  // Alterna o estado do Drawer
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
@@ -44,9 +46,7 @@ export default function NavBar() {
           <img className="navbar-logo" alt="Logo" src={Logo} />
           <Box className="navbar-nav-links">
             <Typography component="a" className="navbar-nav-link">
-              <Link to="aboutUsSection" smooth={true} duration={500}>
-                Conheça a FullEducation
-              </Link>
+              <a href="/#aboutUsSection">Conheça a FullEducation</a>
             </Typography>
             <Typography
               className="navbar-nav-link"
@@ -75,6 +75,7 @@ export default function NavBar() {
               backgroundColor: theme.colors.red,
               color: "white",
               fontWeight: 800,
+              fontSize: "1rem",
               borderRadius: 2,
               padding: "10px 20px",
               "&:hover": {
@@ -88,6 +89,7 @@ export default function NavBar() {
           <IconButton
             className="menu-icon"
             onClick={toggleDrawer(true)}
+            aria-label="Abrir menu de navegação"
             sx={{ display: { xs: "block", md: "none" } }}
           >
             <MenuIcon style={{ color: "white" }} />
@@ -95,54 +97,92 @@ export default function NavBar() {
         </nav>
       </Box>
 
+      {/* Menu suspenso */}
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
         anchorOrigin={{
           vertical: "bottom",
-          horizontal: "left",
+          horizontal: "center",
         }}
         transformOrigin={{
           vertical: "top",
-          horizontal: "left",
+          horizontal: "center",
         }}
         MenuListProps={{
-          onMouseLeave: handleMenuClose,
+          onMouseLeave: handleMenuClose, // Fecha o menu ao sair
+          sx: {
+            bgcolor: "#f9f9f9",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+            borderRadius: "12px",
+            py: 1,
+          },
         }}
       >
         {menuItems.map((item, index) => (
-          <MenuItem key={index} onClick={handleMenuClose}>
+          <MenuItem
+            key={index}
+            onClick={() => (window.location.href = `/${item.toLowerCase().replace(" ", "-")}`)}
+            sx={{
+              fontSize: "1rem",
+              fontWeight: "bold",
+              color: "#0047ab",
+              px: 3,
+              "&:hover": {
+                bgcolor: "#eaf2ff",
+                color: "#002f6c",
+              },
+            }}
+          >
             {item}
           </MenuItem>
         ))}
       </Menu>
 
-      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+      {/* Drawer */}
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: "80%",
+            maxWidth: 230,
+            bgcolor: "#ffffff",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+          },
+        }}
+      >
         <Box
-          className="drawer-content"
           role="presentation"
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            py: 2,
+          }}
         >
-          <IconButton onClick={toggleDrawer(false)}>
-            <CloseIcon />
-          </IconButton>
-          <Divider />
-          <List>
+          <Box sx={{ display: "flex", justifyContent: "flex-end", pr: 2 }}>
+            <IconButton onClick={toggleDrawer(false)} sx={{ color: "#0047ab" }}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+          <Divider sx={{ bgcolor: "#0047ab", opacity: 0.2 }} />
+          <List sx={{ mt: 2 }}>
             <ListItem button>
-              <Link to="aboutUsSection" smooth={true} duration={500}>
-                <ListItemText primary="Conheça a FullEducation" />
-              </Link>
-            </ListItem>
-            <ListItem button>
-              <ListItemText primary="Graduação" />
-            </ListItem>
-            <ListItem button>
-              <ListItemText primary="Pós-graduação" />
-            </ListItem>
-            <ListItem button>
-              <ListItemText primary="Área do aluno" />
+              <a href="/#aboutUsSection">
+                <ListItemText
+                  primary="Conheça a FullEducation"
+                  primaryTypographyProps={{
+                    fontSize: "1rem",
+                    fontWeight: "bold",
+                    color: "#0047ab",
+                  }}
+                />
+              </a>
             </ListItem>
           </List>
         </Box>
